@@ -63,7 +63,24 @@ static const char unknown_str[] = "n/a";
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
+
 static const struct arg args[] = {
 	/* function format          argument */
-	{ datetime, "%s",           "%F %T" },
+	{ separator, " ",           NULL },
+
+	{ ipv4, " %s", "enp1s0" },
+	{ netspeed_rx, "( %s",           "enp1s0" },
+	{ netspeed_tx, " 祝 %s)",           "enp1s0" },
+
+	{ ram_used, "  %s",           NULL },
+	{ ram_perc, "(%s%%)",           NULL },
+
+	{ cpu_freq, "  %s",           NULL },
+	{ cpu_perc, "(%s%%)",           NULL },
+
+	{ temp, "  %s°",           "/sys/class/thermal/thermal_zone0/temp" },
+
+	{ datetime, " ﮮ %s", "%F %T" },
+
+	{ separator, " ",           NULL },
 };
